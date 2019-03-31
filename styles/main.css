@@ -128,6 +128,7 @@ p.vetgedrukt {
 
 .kaart {
 	position: absolute;
+	color: grey;
 	width: 100%;
 	left: 0;
 	margin-bottom: -50px;
