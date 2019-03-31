@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Jura');
+@import url('https://fonts.googleapis.com/css?family=Rochester');
+@import url('https://fonts.googleapis.com/css?family=Teko');
+
+body{
+	font-family: helvetica;
+	color: #FFFFFF;
+	background-color: white;
+}
+
+#weather1, #weather2, #weather3, #weather4, #weather5, #weather6 {
+	width: 200px;
+	padding: 6px;
+	text-align: center;
+}
+
+.stad1, .stad2, .stad3, .stad4, .stad5, .stad6 {
+	background-color: black;
+	padding: 0;
+	padding-bottom: 10px;
+	margin: 10px;
+}
+
+.hidden {
+	display: none;
+}
+
+header {
+	position: absolute;
+	background-color: black;
+	/*background-color: #262626;*/
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 75px;
+}
+
+h3 {
+	font-family: 'Teko', sans-serif;
+	font-size: 45px;
+	margin-top: 9px;
+	margin-bottom: 0;
+	text-align: center;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: 'Rochester', cursive;
+	font-size: 20px;
+	margin-top: -10px;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Rochester', cursive;
+	font-size: 45px;
+	text-shadow: 0 0px 20px rgba(0,0,0,1);
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+h2 {
+	font-family: 'Jura', sans-serif;
+	font-size: 25px;
+	margin-top: 0px;
+	text-transform: uppercase;
+}
+
+.tekst {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.zon {
+	position: absolute;
+	width: 225px;
+	height: 275px;
+	margin: 0;
+	background: none;
+	background-repeat: no-repeat;
+	opacity: 100;
+	z-index: 1;
+}
+
+.regen {
+	position: absolute;
+	width: 260px;
+	height: 335px;
+	margin: 0;
+	background: none;
+	background-repeat: no-repeat;
+	opacity: 100;
+	z-index: 0.5;
+}
+
+.wolken {
+	height: 341px;
+	margin: 0;
+	margin-top: 30px;
+	background: none;
+	background-repeat: no-repeat;
+	opacity: 100;
+	z-index: 2;
+}
+
+.centervlag {
+	width: 100%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vlag {
+	border-radius: 50%;
+	margin-bottom: -45px;
+	width: 80px;
+}
+
+
+
+
+
+.stad1 {
+  	grid-area: stad1;
+}
+
+.stad2 {
+	grid-area: stad2;
+}
+
+.stad3 {
+	grid-area: stad3;
+}
+
+.stad4 {
+	grid-area: stad4;
+}
+
+.stad5 {
+	grid-area: stad5;
+}
+
+.stad6 {
+	grid-area: stad6;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 499px){
+  body{
+    display: grid;
+    grid-template-columns: 100%;
+
+    grid-template-areas: 
+        "stad1"
+        "stad2"
+        "stad3"
+        "stad4"
+        "stad5"
+        "stad6"
+  }
+
+	.stad1 {
+		margin-top: 85px;
+	}
+}
+
+@media only screen and (min-width: 500px) and (max-width: 834px){
+  body{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    grid-template-areas: 
+        "stad1 stad2"
+        "stad3 stad4"
+        "stad5 stad6"
+  }
+
+
+	.stad1, .stad2 {
+		margin-top: 85px;
+	}
+}
+
+@media only screen and (min-width: 835px) and (max-width: 999px){
+  body{
+    display: grid;
+    grid-template-columns: 5% 45% 45% 5%;
+
+    grid-template-areas: 
+        ". stad1 stad2 ."
+        ". stad3 stad4 ."
+        ". stad5 stad6 ."
+  }
+
+	.stad1, .stad2 {
+		margin-top: 85px;
+	}
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1099px){
+  body{
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+
+    grid-template-areas: 
+        ". stad1 stad2 ."
+        ". stad3 stad4 ."
+        ". stad5 stad6 ."
+  }
+
+	.stad1, .stad2 {
+		margin-top: 85px;
+	}
+}
+
+@media only screen and (min-width: 1100px){
+  body{
+    display: grid;
+    grid-template-columns: 5% 30% 30% 30% 5%;
+
+    grid-template-areas: 
+        ". stad1 stad2 stad3 ."
+        ". stad4 stad5 stad6 ."
+  }
+
+	.stad1, .stad2, .stad3 {
+		margin-top: 85px;
+	}
+}
+
+@media only screen and (min-width: 1500px){
+  body{
+    display: grid;
+    grid-template-columns: 14% 24% 24% 24% 14%;
+
+    grid-template-areas: 
+        ". stad1 stad2 stad3 ."
+        ". stad4 stad5 stad6 ."
+  }
+
+	.stad1, .stad2, .stad3 {
+		margin-top: 85px;
+	}
+}
