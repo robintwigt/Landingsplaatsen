@@ -67,6 +67,14 @@ h2 {
 	text-transform: uppercase;
 }
 
+p {
+	margin: 0;
+}
+
+p.vetgedrukt {
+	margin-top: 5px;
+}
+
 .tekst {
 	text-align: center;
 	margin-left: auto;
@@ -118,6 +126,21 @@ h2 {
 	width: 80px;
 }
 
+.kaart {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	margin-bottom: -50px;
+}
+
+.dekaart {
+	background-color: grey;
+	height: 400px;
+}
+
+
+
+
 
 
 
@@ -164,6 +187,10 @@ h2 {
 	.stad1 {
 		margin-top: 85px;
 	}
+
+	.kaart {
+		top: 3725px;
+	}
 }
 
 @media only screen and (min-width: 500px) and (max-width: 834px){
@@ -181,6 +208,10 @@ h2 {
 	.stad1, .stad2 {
 		margin-top: 85px;
 	}
+
+	.kaart {
+		top: 1910px;
+	}
 }
 
 @media only screen and (min-width: 835px) and (max-width: 999px){
@@ -196,6 +227,10 @@ h2 {
 
 	.stad1, .stad2 {
 		margin-top: 85px;
+	}
+
+	.kaart {
+		top: 1910px;
 	}
 }
 
@@ -213,6 +248,10 @@ h2 {
 	.stad1, .stad2 {
 		margin-top: 85px;
 	}
+
+	.kaart {
+		top: 1910px;
+	}
 }
 
 @media only screen and (min-width: 1100px){
@@ -228,6 +267,10 @@ h2 {
 	.stad1, .stad2, .stad3 {
 		margin-top: 85px;
 	}
+
+	.kaart {
+		top: 1305px;
+	}
 }
 
 @media only screen and (min-width: 1500px){
@@ -242,5 +285,9 @@ h2 {
 
 	.stad1, .stad2, .stad3 {
 		margin-top: 85px;
+	}
+
+	.kaart {
+		top: 1305px;
 	}
 }

@@ -2535,6 +2535,132 @@ function onAPIError30(error) {
 
 
 
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//kaart
+//App ID: o7QKNHtuKbuRU1FEcuKl
+//App Code: weMaJwvpD76GSBWd6nM5sg
+
+//maak locaties aan
+function testObjectsEvents(map, logEvent) {
+  // Let's create the same style for all objects
+  var style = {
+    fillColor: 'rgba(35, 51, 129, 0.3)',
+    lineWidth: 5,
+    strokeColor: 'rgba(114, 38, 51, 1)'
+  };
+
+  // Create image marker object
+  var image1Marker = new H.map.Marker(new H.geo.Point(52.0749456, 4.2696802), {
+    icon: new H.map.Icon('img/markernl.png')
+  });
+
+  var image2Marker = new H.map.Marker(new H.geo.Point(-41.2887467, 174.7772092), {
+    icon: new H.map.Icon('img/markernz.png')
+  });
+
+  var image3Marker = new H.map.Marker(new H.geo.Point(10.3995334, -71.4609626), {
+    icon: new H.map.Icon('img/markerve.png')
+  });
+
+  var image4Marker = new H.map.Marker(new H.geo.Point(48.7767986, -121.8144677), {
+    icon: new H.map.Icon('img/markerus.png')
+  });
+
+  var image5Marker = new H.map.Marker(new H.geo.Point(25.2988198, 91.5824514), {
+    icon: new H.map.Icon('img/markerin.png')
+  });
+
+  var image6Marker = new H.map.Marker(new H.geo.Point(35.6828387, 139.7594549), {
+    icon: new H.map.Icon('img/markerjp.png')
+  });
+
+  // Let's give names to our objects and save it as data
+  image1Marker.setData('Image Marker');
+  image2Marker.setData('Image Marker');
+  image3Marker.setData('Image Marker');
+  image4Marker.setData('Image Marker');
+  image5Marker.setData('Image Marker');
+  image6Marker.setData('Image Marker');
+
+  // Now lets add out objects to the container for the conviniece of use
+  var container = new H.map.Group({
+    objects: [image1Marker, image2Marker, image3Marker, image4Marker, image5Marker, image6Marker]
+  });
+
+  // Subscribe to different events on every object
+  image1Marker.addEventListener('pointerenter', logEvent);
+  image1Marker.addEventListener('pointerleave', logEvent);
+  image1Marker.addEventListener('dbltap', logEvent);
+  image2Marker.addEventListener('pointerenter', logEvent);
+  image2Marker.addEventListener('pointerleave', logEvent);
+  image2Marker.addEventListener('dbltap', logEvent);
+  image3Marker.addEventListener('pointerenter', logEvent);
+  image3Marker.addEventListener('pointerleave', logEvent);
+  image3Marker.addEventListener('dbltap', logEvent);
+  image4Marker.addEventListener('pointerenter', logEvent);
+  image4Marker.addEventListener('pointerleave', logEvent);
+  image4Marker.addEventListener('dbltap', logEvent);
+  image5Marker.addEventListener('pointerenter', logEvent);
+  image5Marker.addEventListener('pointerleave', logEvent);
+  image5Marker.addEventListener('dbltap', logEvent);
+  image6Marker.addEventListener('pointerenter', logEvent);
+  image6Marker.addEventListener('pointerleave', logEvent);
+  image6Marker.addEventListener('dbltap', logEvent);
+
+  // Add all of the above created map objects to the map's object collection
+  // so they will be rendered onto the map.
+  map.addObject(container);
+}
+
+//initialize communication with the platform
+var platform = new H.service.Platform({
+  app_id: 'o7QKNHtuKbuRU1FEcuKl',
+  app_code: 'weMaJwvpD76GSBWd6nM5sg',
+  useHTTPS: true
+});
+var pixelRatio = window.devicePixelRatio || 1;
+var defaultLayers = platform.createDefaultLayers({
+  tileSize: pixelRatio === 1 ? 256 : 512,
+  ppi: pixelRatio === 1 ? undefined : 320
+});
+
+// Step 2: initialize a map
+var map = new H.Map(document.getElementById('map'), defaultLayers.normal.map, {
+  // initial center and zoom level of the map
+  center: new H.geo.Point(25, 7),
+  zoom: 2,
+  pixelRatio: pixelRatio
+});
+
+// Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+// Step 4: Create the default UI:
+var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+
+// Step 5: create custom logging facilities
+var logContainer = document.createElement('ul');
+logContainer.className ='log';
+logContainer.innerHTML = '<li class="log-entry">Try clicking on elements</li>';
+map.getElement().appendChild(logContainer);
+
+// Helper for logging events
+function logEvent(evt) {
+  var entry = document.createElement('li');
+  entry.className = 'log-entry';
+  entry.textContent = ['event "', evt.type, '" @ '+ evt.target.getData()].join('');
+  logContainer.insertBefore(entry, logContainer.firstChild);
+}
+
+// Now use the map as required...
+testObjectsEvents(map, logEvent);
+
+
 
 
 
@@ -2572,5 +2698,5 @@ getAPIdata27();
 getAPIdata28();
 getAPIdata29();
 getAPIdata30();
-
+getAPIdata31();
 
