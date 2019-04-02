@@ -49,6 +49,40 @@ timeline.to('.weer', 1, { opacity: 1})
 
 
 
+//animaties bij onload
+//animatie header
+TweenMax.from(".header", 0.5, {top:-100});
+//animaties locatievakken
+TweenMax.from(".stad1", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut, delay:0.5});
+TweenMax.from(".stad2", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut, delay:1});
+TweenMax.from(".stad3", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut, delay:1.5});
+TweenMax.from(".stad4", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut, delay:2});
+TweenMax.from(".stad5", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut, delay:2.5});
+TweenMax.from(".stad6", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut, delay:3});
+//animaties weer
+TweenMax.to(".weer1", 0.1, {opacity:0});
+TweenMax.to(".weer1", 1, {opacity:1, delay:1});
+TweenMax.to(".weer2", 0.1, {opacity:0});
+TweenMax.to(".weer2", 1, {opacity:1, delay:1.5});
+TweenMax.to(".weer3", 0.1, {opacity:0});
+TweenMax.to(".weer3", 1, {opacity:1, delay:2});
+TweenMax.to(".weer4", 0.1, {opacity:0});
+TweenMax.to(".weer4", 1, {opacity:1, delay:2.5});
+TweenMax.to(".weer5", 0.1, {opacity:0});
+TweenMax.to(".weer5", 1, {opacity:1, delay:3});
+TweenMax.to(".weer6", 0.1, {opacity:0});
+TweenMax.to(".weer6", 1, {opacity:1, delay:3.5});
+//animatie kaart
+TweenMax.to(".kaart", 0.1, {opacity:0});
+TweenMax.from(".kaart", 0.5, {marginTop:160, scale:0.2, delay:4});
+TweenMax.to(".kaart", 0.5, {opacity:1, delay:4});
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 //API voor weer bij eerste box
 function getAPIdata1() {
 
@@ -2659,6 +2693,8 @@ function logEvent(evt) {
 
 // Now use the map as required...
 testObjectsEvents(map, logEvent);
+
+
 
 
 
